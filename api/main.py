@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, Union
 from model import Model
+from config import Config
 import uvicorn
 import tempfile
 import os
@@ -92,9 +93,10 @@ async def text_to_audio(file: UploadFile = File(...)) -> Dict[str, str]:
     }
 
 if __name__ == "__main__":
+    config = Config
     uvicorn.run(
         app,
-        host="localhost",
-        port=8000,
-        log_level="info"
+        host=config.host,
+        port=config.port,
+        log_level=config.log_level
     )
