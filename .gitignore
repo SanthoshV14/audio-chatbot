@@ -1,2 +1,5 @@
 api/__pycache__
 api/test.mp3
+.venv
+rough.ipynb
+.env

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+torch
+transformers
+whisper
+ffmpeg-python
+accelerate
+huggingface-hub
+python-dotenv

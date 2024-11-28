@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="web/styles.css">
 </head>
 <body>
-    <h1>Audio Recorder</h1>
-    <button id="recordButton">Start Recording</button>
-    <p id="status">Press the button to start recording.</p>
-    <div id="playbackArea"></div>
-    <div class="controls">
-        <button id="sendButton" style="display: none;">Send</button>
-    </div>
+    <div class="chat-container">
+        <header class="app-header">
+            <h3>Chatbot</h3>
+        </header>
+        <div id="chatArea" class="chat-area">
+          <!-- Chat messages will go here -->
+        </div>
+        <div id="playbackArea"></div>
+        <div id="loader"></div>
+        <div class="input-area">
+          <button id="recordButton" class="record-btn">🎤 Record</button>
+           <textarea id="textArea" placeholder="Type your message here..." class="chat-input"></textarea>
+          <button id="sendButton" class="send-btn">Send</button>
+        </div>
+      </div>
     <script src="web/script.js"></script>
 </body>
 </html>
