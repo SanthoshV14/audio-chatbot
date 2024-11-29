@@ -1,0 +1,16 @@
+**/__pycache__
+**/__pycache__/
+api/__pycache__
+api/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv
+.gitignore
+rough.ipynb
+.env
+.git
+.dockerignore
+Dockerfile
+.vscode/
+docker-compose.yml
