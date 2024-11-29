@@ -1,6 +1,6 @@
 import torch
 from transformers import pipeline
-from config import Config
+from api.config import Config
 
 class Model:
 
@@ -26,6 +26,3 @@ class Model:
             }]
         response = self.chatter(messages)
         return response
-
-
-    

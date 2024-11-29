@@ -1,9 +1,11 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import Dict, Union
-from model import Model
-from config import Config
+from api.model import Model
+from api.config import Config
 import uvicorn
 import tempfile
 import os
@@ -12,6 +14,7 @@ import json
 
 app = FastAPI()
 model = Model()
+app.mount("/web", StaticFiles(directory="web"), name="web")
 
 # Configure CORS
 app.add_middleware(
@@ -23,8 +26,13 @@ app.add_middleware(
 )
 
 # Define a root endpoint
+@app.get("/")
+def root():
+    return FileResponse("web/index.html")
+
+# Health endpoint
 @app.get("/health")
-def read_root():
+def health():
     return {"result": True}
 
 @app.post("/audio-text")
