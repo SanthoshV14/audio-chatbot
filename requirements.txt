@@ -6,4 +6,4 @@ whisper
 ffmpeg-python
 accelerate
 huggingface-hub
-python-dotenv
+python-multipart
